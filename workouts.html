@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    stervitje = [
+    {"emri": "Push-ups", "sipërfaqja": "Krahët, Gjoks", "intensiteti": "Mesatar"},
+    {"emri": "Squats", "sipërfaqja": "Këmbët, Gluteus", "intensiteti": "Mesatar"},
+    {"emri": "Lunges", "sipërfaqja": "Këmbët, Gluteus", "intensiteti": "Mesatar"},
+    {"emri": "Running", "sipërfaqja": "Kardiovaskular", "intensiteti": "I Lartë"},
+    {"emri": "Jumping Jacks", "sipërfaqja": "Kardiovaskular, Full Body", "intensiteti": "I Lartë"},
+    {"emri": "Planks", "sipërfaqja": "Abdomen, Core", "intensiteti": "Mesatar"}
+]
+def kerko_stervitje(sipërfaqja=None, intensiteti=None):
+    rezultat = []
+    for stërvitje in stervitje:
+        if (sipërfaqja and sipërfaqja.lower() in stërvitje["sipërfaqja"].lower()) or (intensiteti and intensiteti.lower() in stërvitje["intensiteti"].lower()):
+            rezultat.append(stërvitje)
+    return rezultat;
+    def regjistro_stervitje(emri, numri_përsëritjesh, data):
+    log_file = open("log_stervitjesh.txt", "a")
+    log_file.write(f"Data: {data}, Stërvitja: {emri}, Përsëritje: {numri_përsëritjesh}\n")
+    log_file.close();
+    print(f"Stërvitja {emri} është regjistruar!"()
+    print("\nStërvitjet me intensitet të lartë:")
+for stërvitje in kerko_stervitje(intensiteti="I Lartë"):
+    print(f"- {stërvitje['emri']}");
+    import datetime
+data = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+regjistro_stervitje("Push-ups", 20, data)
+regjistro_stervitje("Squats", 30, data)
+
+
+
+
+</body>
+</html>
