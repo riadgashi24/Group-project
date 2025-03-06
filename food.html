@@ -40,6 +40,71 @@
         </div>
       </nav>
 
+<div class="calorie-form" style="display: flex; justify-content: center; align-items: center; flex-direction: column; text-align: center;">
+      <h2>Track Your Calorie Intake</h2>
+      <form id="calorie-form">
+          <label for="food-item">Select Food Item:</label>
+          <select id="food-item" class="form-select">
+              <option value="chicken-breast">Chicken Breast</option>
+              <option value="brown-rice">Brown Rice</option>
+              <option value="oats">Oats</option>
+              <option value="salmon">Salmon</option>
+              <option value="eggs">Eggs</option>
+              <option value="sweet-potato">Sweet Potato</option>
+              <option value="greek-yogurt">Greek Yogurt</option>
+              <option value="almonds">Almonds</option>
+          </select>
+      
+          <label for="quantity">Quantity (grams):</label>
+          <input type="number" id="quantity" class="form-control" min="1" value="100">
+      
+          <button type="button" onclick="addCalorieIntake()" class="btn btn-primary mt-2">Add</button>
+      </form>
+      
+      <div id="calories-log" class="mt-3">
+          <h3>Calorie Log</h3>
+          <ul id="log-list"></ul>
+      </div>
+      
+      <script>
+          function addCalorieIntake() {
+              let foodItem = document.getElementById('food-item').value;
+              let quantity = document.getElementById('quantity').value;
+      
+              
+              let calories = 0;
+              if (foodItem === 'chicken-breast') {
+                  calories = 165 * (quantity / 100);
+              } else if (foodItem === 'brown-rice') {
+                  calories = 111 * (quantity / 100);
+              } else if (foodItem === 'oats') {
+                  calories = 68 * (quantity / 100);
+              }
+              else if (foodItem === 'salmon') {
+                  calories = 180 * (quantity / 100);
+                  }
+                  else if (foodItem === 'eggs') {
+                      calories = 70 * (quantity / 100);
+                      }
+                      else if (foodItem === 'sweet-potato') {
+                          calories = 105 * (quantity / 100);
+                          }
+                          else if (foodItem === 'greek-yogurt') {
+                              calories = 40 * (quantity / 100);
+                              }
+                              else if (foodItem === 'almonds') {
+                                  calories = 280 * (quantity / 100);
+                                  }
+      
+              let logList = document.getElementById('log-list');
+              let newLogItem = document.createElement('li');
+              newLogItem.textContent = `${foodItem.charAt(0).toUpperCase() + foodItem.slice(1)} - ${quantity}g - ${calories.toFixed(2)} calories`;
+              logList.appendChild(newLogItem);
+          }
+      </script>
+           
+    </div>
+      
 
       <div class="food" style="display: flex; justify-content: center; align-items: center; flex-direction: column; text-align: center;">
         <h1>Food</h1>
@@ -67,6 +132,46 @@
                 <h5 class="card-title">Oats</h5>
                 <p class="card-text">Oats are another fantastic food choice, packed with nutrients that can fuel your body before a workout and aid in recovery.</p>
               </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img src="foto/food6.jpg" alt="Salmon" height="286px" width="286">
+                <div class="card-body">
+                    <h5 class="card-title">Salmon</h5>
+                    <p class="card-text">Salmon is rich in omega-3 fatty acids and protein, making it a fantastic choice for recovery and muscle building.</p>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img src="foto/food7.jpg" alt="Eggs" height="286px" width="286">
+                <div class="card-body">
+                    <h5 class="card-title">Eggs</h5>
+                    <p class="card-text">Eggs are a great source of protein and healthy fats. They’re versatile and can help you build muscle and recover faster after a workout.</p>
+                </div>
+            </div>
+        
+            <div class="card" style="width: 18rem;">
+                <img src="foto/food8.jpg" alt="Sweet Potato" height="286px" width="286">
+                <div class="card-body">
+                    <h5 class="card-title">Sweet Potato</h5>
+                    <p class="card-text">Sweet potatoes are rich in vitamins, minerals, and fiber. They provide long-lasting energy, making them a great pre-workout food.</p>
+                </div>
+            </div>
+        
+            <div class="card" style="width: 18rem;">
+                <img src="foto/food9.jpg" alt="Greek Yogurt" height="286px" width="286">
+                <div class="card-body">
+                    <h5 class="card-title">Greek Yogurt</h5>
+                    <p class="card-text">Greek yogurt is packed with protein and probiotics. It’s perfect for aiding digestion and can be enjoyed as a post-workout snack or breakfast.</p>
+                </div>
+            </div>
+        
+            <div class="card" style="width: 18rem;">
+                <img src="foto/food10.jpg" alt="Almonds" height="286px" width="286">
+                <div class="card-body">
+                    <h5 class="card-title">Almonds</h5>
+                    <p class="card-text">Almonds are a great source of healthy fats, fiber, and protein. They make for an excellent snack, especially when you’re in need of a quick energy boost.</p>
+                </div>
             </div>
         </div>
       
